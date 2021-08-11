@@ -37,7 +37,7 @@ function make(exp, type) {
   let count = packSlots[exp][type]
   for (let i = 0; i < count; i++) {
     if (type == 'b' || type == 'f')
-      add.push(cache[selectIndex(ends[exp][bonus(type)])])
+      add.push(cache[selectIndex(ends[exp][bonus(exp, type)])])
     else
       add.push(cache[selectIndex(ends[exp][type])])
   }
@@ -55,7 +55,7 @@ function selectIndex(pair) {
 //Common Rare Equipment Super Legendary Majestic Fabled
 //0.811	0.129	0.031 0.012 0.01 0.006 0.001
 
-function bonus(type) {
+function bonus(exp, type) {
   let outcomes = []
   let upgrades = []
   let i = 0
